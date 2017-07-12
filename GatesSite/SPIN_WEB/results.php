@@ -1,0 +1,270 @@
+<?php
+
+//session_start();
+//if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+//    echo "<script type='text/javascript'>alert('Your Answers have been submitted!Thank You for participating.')</script>";
+ //   echo "<script type='text/javascript'>window.location.href='logout.php';</script>";
+//}
+//if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+ //   echo "<script type='text/javascript'>alert('Logged In to continue');</script>";
+ //   echo "<script type='text/javascript'>window.location.href ='Login.php';</script";
+//}
+    //echo "<font color='white'>Welcome here,". $_SESSION['username']."</font>";
+$v1;
+$v2;
+$v3;
+$v4;
+$v5;
+$v6;
+$v7;
+$v8;
+$v9;
+$v10;
+$v11;
+$v12;
+$v13;
+$v14;
+$v15;
+$v16;
+$v17;
+$v18;
+$v19;
+$v20;
+$t1=0;
+if(!isset($_POST['r1'])){
+    $v1=0;
+}
+else
+{
+    $v1=$_POST['r1'];
+    if($v1==2){
+        $t1++;
+    }
+}
+if(!isset($_POST['r2'])){
+    $v2=0;
+}
+else
+{
+    $v2=$_POST['r2'];
+    if($v2==2)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r3'])){
+    $v3=0;
+}
+else
+{
+    $v3=$_POST['r3'];
+    if($v3==2)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r4'])){
+    $v4=0;
+}
+else
+{
+    $v4=$_POST['r4'];
+    if($v4==4)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r5'])){
+    $v5=0;
+}
+else
+{
+    $v5=$_POST['r5'];
+    if($v5==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r6'])){
+    $v6=0;
+    
+}
+else
+{
+    $v6=$_POST['r6'];
+    if($v6==3)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r7'])){
+    $v7=0;
+}
+else
+{
+    $v7=$_POST['r7'];
+    if($v7==3)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r8'])){
+    $v8=0;
+}
+else
+{
+    $v8=$_POST['r8'];
+    if($v8==4)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r9'])){
+    $v9=0;
+}
+else
+{
+    $v9=$_POST['r9'];
+    if($v9==4)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r10'])){
+    $v10=0;
+}
+else
+{
+    $v10=$_POST['r10'];
+    if($v10==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r11'])){
+    $v11=0;
+}
+else
+{
+    $v11=$_POST['r11'];
+    if($v11==4)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r12'])){
+    $v12=0;
+}
+else
+{
+    $v12=$_POST['r12'];
+    if($v12==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r13'])){
+    $v13=0;
+}
+else
+{
+    $v13=$_POST['r13'];
+    if($v13==3)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r14'])){
+    $v14=0;
+}
+else
+{
+    $v14=$_POST['r14'];
+    if($v14==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r15'])){
+    $v15=0;
+}
+else
+{
+    $v15=$_POST['r15'];
+    if($v15==4)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r16'])){
+    $v16=0;
+}
+else
+{
+    $v16=$_POST['r16'];
+    if($v16==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r17'])){
+    $v17=0;
+}
+else
+{
+    $v17=$_POST['r17'];
+    if($v17==3)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r18'])){
+    $v18=0;
+}
+else
+{
+    $v18=$_POST['r18'];
+    if($v18==1)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r19'])){
+    $v19=0;
+}
+else
+{
+    $v19=$_POST['r19'];
+    if($v19==3)
+    {
+        $t1++;
+    }
+}
+if(!isset($_POST['r20'])){
+    $v20=0;
+}
+else
+{
+    $v20=$_POST['r20'];
+    if($v20==1)
+    {
+        $t1++;
+    }
+}
+session_start();
+$user_name= $_SESSION['username'];
+$conn1 = mysqli_connect("localhost", "parmeet", "parmeet@123", "mytsg");
+ $stmt1 = "update register set r1=$v1,r2=$v2,r3=$v3,r4=$v4,r5=$v5,r6=$v6,r7=$v7,r8=$v8,r9=$v9,r10=$v10,r11=$v11,r12=$v12,r13=$v13,r14=$v14,r15=$v15,r16=$v16,r17=$v17,r18=$v18,r19=$v19,r20=$v20, totalmarks=$t1 where username='" .$user_name. "'";
+ $n = mysqli_query($conn1, $stmt1);
+ echo "Answers Submitted";  
+ echo "<script type='text/javascript'>alert('Your Answers have been submitted!Thank You for participating.')</script>";
+   echo "<script type='text/javascript'>window.location.href='logout.php';</script>";
+?>
+<html>
+    <body>
+    
+<?php
+
+?>
+</body>
+</html>
